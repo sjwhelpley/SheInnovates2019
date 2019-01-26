@@ -1,0 +1,17 @@
+
+<doctype html>
+<head>
+    <title>Flask Company Database</title>
+</head>
+ 
+<h2>Flask Company Database</h2>
+ 
+{% from "formhelpers.html" import render_field %}
+<form method=post>
+  <dl>
+    {{ render_field(form.select) }}
+    <p>
+    {{ render_field(form.search) }}
+  </dl>
+  <p><input type=submit value=Search>
+</form>

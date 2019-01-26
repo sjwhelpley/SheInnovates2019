@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1>Add company</h1>
+    <form method="POST" action="/">
+        <input type="text" name="title">
+        <input type="submit" value="Add">
+    </form>
+
+    <h1>Companies</h1>
+    {% for company in companies %}
+      <p>{{company.name}}</p>
+    {% endfor %}
+  </body>
+</html>
