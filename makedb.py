@@ -1,4 +1,4 @@
-# db_creator.py
+# db_creator.py/Users/margaretstuart/Desktop/flask/makedb.py
  
 from sqlalchemy import create_engine, ForeignKey
 from sqlalchemy import Column, Date, Integer, String
@@ -16,7 +16,6 @@ class Company(Base):
     name = Column(String) # name not ticker
 
     def __init__(self, name):
-        """"""
         self.name = name
  
     def __repr__(self):
@@ -29,13 +28,11 @@ class Stats(Base):
     id = Column(Integer, primary_key=True)
     ticker = Column(String)
     board = Column(Integer)
-    #fraud = Column(Boolean)
 
     company_id = Column(Integer, ForeignKey("companies.id"))
     company = relationship("Company", backref=backref("stats"), order_by=id)
  
     def __init__(self, ticker, board):
-        """"""
         self.ticker = ticker
         self.board = board
  
